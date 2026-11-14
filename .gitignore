@@ -1,0 +1,12 @@
+node_modules/
+dist/
+# The app built into the extension (contains the API key from web/.env.local)
+extension/app/
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Local tool settings (machine-specific paths)
+.claude/

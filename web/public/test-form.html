@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample application form</title>
+    <style>
+      body {
+        max-width: 640px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        font: 16px/1.5 system-ui, sans-serif;
+        color: #14213d;
+        background: #fff;
+        color-scheme: light;
+      }
+      label,
+      legend {
+        display: block;
+        margin-top: 1rem;
+        font-weight: 600;
+      }
+      input:not([type='radio']),
+      select,
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        font: inherit;
+        box-sizing: border-box;
+      }
+      fieldset {
+        margin-top: 1rem;
+        border: 1px solid #d3d9d1;
+      }
+      fieldset label {
+        display: inline;
+        font-weight: 400;
+        margin-right: 1rem;
+      }
+      button {
+        margin-top: 1.5rem;
+        padding: 0.6rem 1.2rem;
+        font: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sample application form</h1>
+    <p>
+      A stand-in for a real application page, for trying autofill. It mixes the labelling styles found on real forms.
+      Submitting does nothing.
+    </p>
+
+    <button id="fill-here" type="button" hidden>Fill this form with my profile</button>
+
+    <form id="application">
+      <label for="first_name">First Name *</label>
+      <input id="first_name" name="first_name" required />
+
+      <label for="last_name">Last Name *</label>
+      <input id="last_name" name="last_name" required />
+
+      <label for="email">Email *</label>
+      <input id="email" type="email" required />
+
+      <!-- No "for": the label wraps nothing and the input has only a name -->
+      <div class="field">
+        <label>Phone</label>
+        <input name="applicantPhoneNumber" type="tel" />
+      </div>
+
+      <label for="q1">Location (City)</label>
+      <input id="q1" />
+
+      <label for="q2">Country</label>
+      <select id="q2">
+        <option value="">Select</option>
+        <option value="US">United States</option>
+        <option value="IN">India</option>
+        <option value="DE">Germany</option>
+      </select>
+
+      <label for="q3">LinkedIn Profile</label>
+      <input id="q3" placeholder="https://linkedin.com/in/you" />
+
+      <input aria-label="GitHub URL" placeholder="GitHub URL" style="margin-top: 1rem" />
+
+      <label for="q4">Website</label>
+      <input id="q4" type="url" />
+
+      <label for="q5">Current company</label>
+      <input id="q5" />
+
+      <label for="q6">Current job title</label>
+      <input id="q6" />
+
+      <label for="q7">How many years of relevant experience do you have?</label>
+      <input id="q7" />
+
+      <label for="q8">Notice period</label>
+      <input id="q8" />
+
+      <label for="q9">Salary expectations</label>
+      <input id="q9" />
+
+      <fieldset>
+        <legend>Will you now or in the future require visa sponsorship?</legend>
+        <input type="radio" name="sponsor" id="sponsor_yes" value="1" /> <label for="sponsor_yes">Yes</label>
+        <input type="radio" name="sponsor" id="sponsor_no" value="0" /> <label for="sponsor_no">No</label>
+      </fieldset>
+
+      <label for="q10">Are you legally authorized to work in this country?</label>
+      <select id="q10">
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label for="resume">Resume/CV *</label>
+      <input id="resume" type="file" accept=".pdf,.doc,.docx" required />
+
+      <label for="q11">Cover letter</label>
+      <textarea id="q11" rows="5"></textarea>
+
+      <!-- Things the extension must leave alone -->
+      <label for="q12">How did you hear about this job? *</label>
+      <input id="q12" required />
+
+      <label for="q13">Name of the person who referred you</label>
+      <input id="q13" />
+
+      <label for="q14">Gender</label>
+      <select id="q14">
+        <option value="">Prefer not to say</option>
+        <option>Woman</option>
+        <option>Man</option>
+      </select>
+
+      <button type="submit">Submit application</button>
+      <p id="sent" hidden>Submitted (nothing was sent anywhere).</p>
+    </form>
+    <script src="test-form.js"></script>
+  </body>
+</html>

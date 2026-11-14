@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Job Tracker</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../icons/icon48.png" alt="" width="28" height="28" />
+      <h1>Job Tracker</h1>
+    </header>
+
+    <button id="open-app" type="button" class="primary">Open Job Tracker</button>
+
+    <section id="status" aria-live="polite">
+      <p id="profile-line">Checking your profile</p>
+      <p id="resume-line" class="soft"></p>
+    </section>
+
+    <button id="fill" type="button">Fill this page</button>
+    <p id="result" class="soft" role="status"></p>
+
+    <label class="toggle">
+      <input id="auto" type="checkbox" />
+      <span>Fill known application sites by themselves</span>
+    </label>
+    <p class="soft small">
+      Greenhouse, Lever, Ashby, Workday, SmartRecruiters and Workable. Elsewhere, use the button above or Alt Shift F.
+      You always press Submit yourself.
+    </p>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
